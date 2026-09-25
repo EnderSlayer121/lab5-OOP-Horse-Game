@@ -11,13 +11,13 @@ void Horse::init(int index, int trackLength){
   Horse::position = 0;
   Horse::index = index;
   Horse::trackLength = trackLength;
-  std::cout << "Horse #" << Horse::index << ", Horse Position is " << Horse::position << std::endl;
+  /*std::cout << "Horse #" << Horse::index << ", Horse Position is " << Horse::position << std::endl;*/
 }// end init
 
 void Horse::advance(){
   int coin = rand() % 2;
   Horse::position += coin;
-  std::cout << "Horse moved = " << coin << ", Horse Position is now = " << Horse::position << std::endl;
+  /*std::cout << "Horse " << Horse::index << " moved = " << coin << ", Horse Position is now = " << Horse::position << std::endl;*/
 }// end advance
 
 void Horse::printLane(){

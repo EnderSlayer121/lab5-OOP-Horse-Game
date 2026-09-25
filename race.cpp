@@ -5,27 +5,28 @@
 #include <iostream>
 
 Race::Race(){
-  const static int Race::NUM_HORSES = 5;
-  const int Race::TRACK_LENGTH = 15;
   srand(time(NULL));
   Race::horses[0, 0, 0, 0, 0];
   for (int index = 0; index < Race::NUM_HORSES; index++){
-    Horse.init(index, Race::TRACK_LENGTH);
+    horses[index].init(index, Race::TRACK_LENGTH);
   }//end for
 }//end Race
 
 void Race::start(){
-  Horse h
+  std::string next;
   bool keepGoing = true;
+  std::cout << "Horse Race Game: " << std::endl;
   while (keepGoing){
     for (int index = 0; index < Race::NUM_HORSES; index++){
-      h.advance();
-      h.printLine();
-      if (h.isWinner()){
+      horses[index].advance();
+      horses[index].printLane();
+      if (horses[index].isWinner()){
         keepGoing = false;  
-      }// end if
+      }//end if
     }//end for
-    std::cout << "Press Enter to continue" << std::endl;
-    std::cin << std::endl;
+    if (keepGoing){  
+      std::cout << "Press Enter to continue" << std::endl;
+      std::getline(std::cin, next);
+    }//end if
   }//end while
 }//end start
